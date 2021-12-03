@@ -36,14 +36,14 @@ FragTrap &FragTrap::operator=(FragTrap const &other)
 }
 
 void    FragTrap::highFivesGuys() {
-    std::cout << "( ⌒o⌒)人(⌒-⌒ )v" << std::endl;
+    std::cout << "( ⌒o⌒)人(⌒-⌒ )v" << std::endl << std::endl;
 }
 
 void    FragTrap::attack(const std::string &target) {
     std::cout << "ClapTrap " << _name << " attack " << target << ", causing " << _hitPts << " points of damage! " << std::endl;
 }
 
-std::ostream &operator<<(std::ostream &out, ClapTrap const & fragTrap) {
+std::ostream &operator<<(std::ostream &out, FragTrap const & fragTrap) {
     out << fragTrap._name << " got " << fragTrap._hitPts << " hp, " << fragTrap._energyPts << " ernegy point and " << fragTrap._attackDmg << " attack damage" << std::endl;
     return out;
 }
