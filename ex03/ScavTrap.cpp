@@ -16,18 +16,18 @@ ScavTrap::ScavTrap(std::string const &pName) : ClapTrap(pName) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
-    std::cout << "ScavTrap copy constructor" << std::endl;
-    this->_name = other._name;
+    std::cout << "ScavTrap copy constructor called" << std::endl;
+    this->_nameClapTrap = other._nameClapTrap;
     this->_energyPts = other._energyPts;
     this->_hitPts = other._hitPts;
     this->_attackDmg = other._attackDmg;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const & other) {
-    std::cout << "Scavtrap Copy Assignement" << std::endl;
     if (this != &other)
     {
-        this->_name = other._name;
+        std::cout << "Scavtrap Copy Assignement" << std::endl;
+        this->_nameClapTrap = other._nameClapTrap;
         this->_energyPts = other._energyPts;
         this->_hitPts = other._hitPts;
         this->_attackDmg = other._attackDmg;
@@ -36,7 +36,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const & other) {
 }
 
 void    ScavTrap::attack(const std::string &target) {
-    std::cout << "ScavTrap " << _name << " attack " << target << ", causing " << _hitPts << " points of damage! " << std::endl;
+    std::cout << "ScavTrap " << _nameClapTrap << " attack " << target << ", causing " << _hitPts << " points of damage! " << std::endl;
 }
 
 void    ScavTrap::guardGate() {
@@ -44,6 +44,6 @@ void    ScavTrap::guardGate() {
 }
 
 std::ostream &operator<<(std::ostream &out, ScavTrap const & ScavTrap) {
-    out << ScavTrap._name << " got " << ScavTrap._hitPts << " hp, " << ScavTrap._energyPts << " ernegy point and " << ScavTrap._attackDmg << " attack damage" << std::endl;
+    out << ScavTrap._nameClapTrap << " got " << ScavTrap._hitPts << " hp, " << ScavTrap._energyPts << " ernegy point and " << ScavTrap._attackDmg << " attack damage" << std::endl;
     return out;
 }
